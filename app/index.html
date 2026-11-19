@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="mark" aria-hidden="true">LL</div>
+    <div>
+      <h1>Leonida Ledger</h1>
+      <p class="sub">GTA VI trophy guide &amp; tracker — 55 trophies, offline, in our own words</p>
+    </div>
+  </div>
+  <div class="progress" id="progressBox">
+    <div class="bar"><span id="barFill"></span></div>
+    <p id="progressText">Loading…</p>
+    <p id="gradeText" class="muted"></p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <a href="#/checklist" data-view="checklist">Checklist</a>
+  <a href="#/roadmap" data-view="roadmap">Roadmap</a>
+  <a href="#/missables" data-view="missables">Missables <span class="pill" id="missCount">1</span></a>
+  <a href="#/sources" data-view="sources">Sources &amp; Method</a>
+</nav>
+
+<p id="demoBanner" class="demo" hidden>Demo progress seeded (13 of 55 earned) for the screenshots — nothing here is saved.</p>
+
+<section class="controls" id="filters" aria-label="Filters">
+  <label>Search <input id="q" type="search" placeholder="name or description…" autocomplete="off"></label>
+  <label>Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label>Kind
+    <select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="missions">Missions</option>
+      <option value="activities">Activities</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="combat">Combat</option>
+      <option value="exploration">Exploration</option>
+      <option value="misc">Misc</option>
+    </select>
+  </label>
+  <label>Status
+    <select id="status">
+      <option value="all">Earned + unearned</option>
+      <option value="earned">Earned only</option>
+      <option value="unearned">Unearned only</option>
+    </select>
+  </label>
+  <label class="check"><input id="missableOnly" type="checkbox"> Missable only</label>
+  <label class="check"><input id="spoilers" type="checkbox" checked> Hide story spoilers</label>
+</section>
+
+<main id="view"></main>
+
+<aside id="detail" class="detail" hidden aria-label="Trophy detail"></aside>
+
+<section class="tools" aria-label="Progress tools">
+  <button id="exportBtn" type="button">Export progress (JSON)</button>
+  <label class="importBtn">Import progress <input id="importFile" type="file" accept="application/json"></label>
+  <button id="resetBtn" type="button">Reset progress</button>
+  <span id="toolMsg" class="muted" role="status"></span>
+</section>
+
+<footer>
+  <p>Leonida Ledger — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Rockstar Games; this guide is not affiliated with or endorsed by Rockstar. Trophy names and descriptions are quoted as PlayStation publishes them; every guide is written in this entry's own words. No network requests are made: the app only reads its own <code>data/trophies.json</code>.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
