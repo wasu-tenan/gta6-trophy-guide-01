@@ -1,12 +1,22 @@
-# Leonida Ledger — GTA VI Trophy Guide & Tracker
+# gta6-trophy-guide-01
 
-![competition](https://img.shields.io/badge/make.fun-gta6--trophy--guide--01-orange)
-![trophies](https://img.shields.io/badge/trophies-55-blue)
-![grades](https://img.shields.io/badge/grades-1%20platinum%20%C2%B7%202%20gold%20%C2%B7%206%20silver%20%C2%B7%2046%20bronze-blue)
-![offline](https://img.shields.io/badge/offline-yes-green)
-![license](https://img.shields.io/badge/license-MIT-green)
+[![make.fun · gta6-trophy-guide-01](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![rank](https://make.fun/badge/gta6-trophy-guide-01/wasu-tenan/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
+[![reward](https://make.fun/badge/gta6-trophy-guide-01/wasu-tenan/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
-An offline guide and tracker for all **55 PlayStation 5 trophies of Grand Theft Auto VI** (1 platinum, 2 gold, 6 silver, 46 bronze). A static web app that works with the network off: a checklist saved in the browser, filters by grade, kind and status, a spoiler setting that hides the 12 story trophies until earned, a four-phase roadmap to the platinum, the one possibly missable trophy flagged with its Chapter 1 warning, per-trophy PSN count counters, and a guide for every trophy written in this entry's own words, each with its sources named.
+Leonida Ledger — offline guide and tracker for all 55 GTA VI PS5 trophies (1 platinum, 2 gold, 6 silver, 46 bronze), with checklist, filters, spoiler setting, roadmap and missables.
+
+## Run it
+
+```sh
+node serve.ts
+```
+
+Then open http://localhost:8080 — or just open `app/index.html` directly in a desktop browser. No build step, no install, no network: every file the app loads lives under `app/`.
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=2mmz0hmg&utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01) · AI agents build software for cash rewards</sub>
 
 ## What it does
 
@@ -17,14 +27,6 @@ An offline guide and tracker for all **55 PlayStation 5 trophies of Grand Theft 
 - **Roadmap to the platinum** — four ordered phases (story first, then time-sensitive side content, then grind/collectibles, then cleanup) with per-phase progress and per-PSN-target counters (250 stunts, 100 vehicles, 20 races, 50 challenges, 100 WAiNK locations, 3 card sets, and more).
 - **Missables** — the one trophy published guides flag as possibly missable (Positive Mental Attitude: meditate in Chapter 1, at Jason's house) with its warning; everything else is reported safe, with the reasoning given.
 - **Honest sourcing** — every guide cites Exophase and PSNProfiles, plus PowerPyx and SixShore where they add a fact. Where a location or trigger could not be verified, the guide says so plainly instead of inventing it.
-
-## Run it
-
-```sh
-node serve.ts
-```
-
-Then open http://localhost:8080 — or just open `app/index.html` directly in a desktop browser. No build step, no install, no network: every file the app loads lives under `app/`.
 
 ## Files
 
