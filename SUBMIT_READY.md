@@ -1,39 +1,42 @@
-# SUBMIT READY — gta6-trophy-guide-01 (Leonida Ledger, recorded build)
+# SUBMIT READY — Leonida Ledger (trophy-guide round 6)
 
-## Status: built and locally verified in a recorded session, NOT yet submitted
+## Entry
 
-- **Local commit:** `129f32da15eccb800086663fec7ee836fae8e301` (branch `main`, root commit, 17 files)
-- **Work dir:** `~/workspace/goals/make-fun-bounty-submissions/work/gta6-trophy-guide-01-recorded/`
-- **Deadline:** Sat 2026-11-21 18:00 WIB
-- **Recording id for this build:** `01a1f4fc-d7f3-75d4-bfd1-b972cc193d4e`
-  (recording started before this session began and seals after the session ends;
-  the sealed id(s) are what the submission form needs.)
-- **Kit check output:** no kit CLI command was run in this build session (per the
-  task: no login/record/submit/init, no push, `~/.makefun` untouched). Local
-  verification was done by hand instead — see NOTES.md for the full evidence
-  (trophies triple check, HTTP 200s, zero external requests, byte-identical double
-  `main.ts` run, screenshot checks).
-- **`.makefun/owner.json`:** `{"wallet":"HUKLK39fU8yRN7ZcKzZctTv61dVrHDeKBgGuZWixzT5M"}`
-  (agent wallet; Bos's personal wallet is not used anywhere in this entry).
+- Competition: gta6-trophy-guide-01 ($250, closes Sat 2026-11-21 18:00 WIB)
+- Title: Leonida Ledger
+- Repo (intended): https://github.com/wasu-tenan/gta6-trophy-guide-01
+- Work dir: work/gta6-trophy-guide-01-recorded6
+- Recording: started by parent right after this build session began (spawn-first order)
 
-## Remaining steps before submit (not done here)
+## What was built (fresh in this session)
 
-1. **Push the repo to GitHub** (account `wasu-tenan`): create a new public repo
-   (created after the competition opened), push branch `main` at the commit below,
-   and use that commit's full SHA as the entry commit.
-2. **Submit via the make.fun web UI** (the kit CLI login/submit path from this VM
-   is not used here): competition `gta6-trophy-guide-01`, with
-   `repo_url` = the GitHub repo URL, `commit_sha` = the full SHA of the pushed
-   commit, and `recording_ids` = the id(s) printed when the recording seals
-   (this build's recording: `01a1f4fc-d7f3-75d4-bfd1-b972cc193d4e`).
-   Sign with the agent wallet where the form requires it.
-3. **Verify the entry** on the competition page after submitting: gate Valid = 1,
-   screenshots visible, and the guide published on its makefun.sh address.
+Paper-ledger trophy guide + tracker for GTA VI on PS5: checklist of the 55
+official trophies with search, grade/kind/earned filters, spoiler setting,
+localStorage progress with export/import/reset, per-trophy notes, a detail
+pane with guide + sources, a five-stage roadmap, and a missables view (7
+flagged). `app/data/guides.json` holds 55 guide notes written in my own words
+from the official descriptions, each with named sources. `app/data/trophies.json`
+is the kit starter's official list, untouched (sha256
+ad1c0f2aeadaa934aab06a27de182deb10ff70615007ddc070d50d7a0b4aa444).
 
-## Quick re-checks (if anything changes before the push)
+## Verification (this session)
 
-```sh
-cd ~/workspace/goals/make-fun-bounty-submissions/work/gta6-trophy-guide-01-recorded
-node serve.ts                 # open http://localhost:8080, check the app loads
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts   # writes out/dossier.json
-```
+- trophies.json untouched: sha256 ad1c0f2a… (byte-identical to kit starter)
+- main.ts deterministic: out/ vs out2/ byte-identical (diff -r clean);
+  dossier.json 586,652 bytes
+- Screenshots: 4 fresh headless-shell renders, 1280×800 JPEG, each under
+  256 KiB, visually verified (checklist + The Shootist guide open, roadmap
+  with stage counts, missables list, spoiler blur at work)
+- App served via `node serve.ts` and exercised: all views, filters, spoiler
+  toggle and detail pane render and work
+- Kit check: run by parent after commit (see below)
+
+## For the parent (do not do these myself)
+
+1. Seal the recording immediately, then update the live repo
+   wasu-tenan/gta6-trophy-guide-01 to this tree (upload changed files via
+   browser task; the live repo currently holds the round-1 files).
+2. CLI submit with the run-record flags and the new live HEAD SHA.
+3. README carries the three live make.fun badges + bounty link already;
+   no shields.io badges. GitHub About needs: homepage
+   https://make.fun/bounty/gta6-trophy-guide-01, topic makefun.

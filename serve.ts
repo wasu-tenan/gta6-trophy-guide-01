@@ -30,15 +30,7 @@ const MIME: Record<string, string> = {
 };
 
 createServer((request, response) => {
-  let url: URL;
-  try {
-    url = new URL(request.url ?? '/', 'http://localhost');
-  } catch {
-    // Browsers sometimes request '//', which makes `new URL` throw; answer 400
-    // instead of crashing the server.
-    response.writeHead(400).end('bad request');
-    return;
-  }
+  const url = new URL(request.url ?? '/', 'http://localhost');
   let pathname: string;
   try {
     pathname = decodeURIComponent(url.pathname);
