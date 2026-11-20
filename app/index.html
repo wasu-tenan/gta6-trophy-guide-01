@@ -7,33 +7,29 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <div class="brand">
-    <div class="mark" aria-hidden="true">LL</div>
-    <div>
-      <h1>Leonida Ledger</h1>
-      <p class="sub">GTA VI trophy guide &amp; tracker — 55 trophies, offline, in our own words</p>
-    </div>
+<header class="masthead">
+  <div class="masthead-title">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Ledger</h1>
+    <p class="tagline">A paper ledger for every trophy in Leonida: the checklist, the road to platinum, and the ones you can miss.</p>
   </div>
-  <div class="progress" id="progressBox">
-    <div class="bar"><span id="barFill"></span></div>
-    <p id="progressText">Loading…</p>
-    <p id="gradeText" class="muted"></p>
+  <div class="progress-box" id="progress-box">
+    <p class="progress-count" id="progress-count">0 of 55 earned</p>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <p class="progress-grades" id="progress-grades"></p>
   </div>
 </header>
 
-<nav class="tabs" aria-label="Views">
+<nav class="tabs" id="tabs">
   <a href="#/checklist" data-view="checklist">Checklist</a>
   <a href="#/roadmap" data-view="roadmap">Roadmap</a>
-  <a href="#/missables" data-view="missables">Missables <span class="pill" id="missCount">1</span></a>
-  <a href="#/sources" data-view="sources">Sources &amp; Method</a>
+  <a href="#/missables" data-view="missables">Missables</a>
+  <a href="#/about" data-view="about">About</a>
 </nav>
 
-<p id="demoBanner" class="demo" hidden>Demo progress seeded (13 of 55 earned) for the screenshots — nothing here is saved.</p>
-
-<section class="controls" id="filters" aria-label="Filters">
-  <label>Search <input id="q" type="search" placeholder="name or description…" autocomplete="off"></label>
-  <label>Grade
+<section class="controls" id="controls">
+  <label class="control">Search <input id="search" type="search" placeholder="Trophy name or mission&hellip;" autocomplete="off"></label>
+  <label class="control">Grade
     <select id="grade">
       <option value="all">All grades</option>
       <option value="platinum">Platinum</option>
@@ -42,42 +38,54 @@
       <option value="bronze">Bronze</option>
     </select>
   </label>
-  <label>Kind
+  <label class="control">Kind
     <select id="kind">
       <option value="all">All kinds</option>
       <option value="story">Story</option>
-      <option value="missions">Missions</option>
-      <option value="activities">Activities</option>
-      <option value="collectibles">Collectibles</option>
+      <option value="activity">Activity</option>
       <option value="combat">Combat</option>
       <option value="exploration">Exploration</option>
+      <option value="collectible">Collectible</option>
       <option value="misc">Misc</option>
+      <option value="completion">Completion</option>
+      <option value="platinum">Platinum</option>
     </select>
   </label>
-  <label>Status
-    <select id="status">
-      <option value="all">Earned + unearned</option>
-      <option value="earned">Earned only</option>
-      <option value="unearned">Unearned only</option>
+  <label class="control">Show
+    <select id="earned-filter">
+      <option value="all">All trophies</option>
+      <option value="todo">Not earned yet</option>
+      <option value="earned">Earned</option>
     </select>
   </label>
-  <label class="check"><input id="missableOnly" type="checkbox"> Missable only</label>
-  <label class="check"><input id="spoilers" type="checkbox" checked> Hide story spoilers</label>
+  <label class="control check"><input id="spoiler" type="checkbox" checked> Hide story trophies until earned</label>
+  <span class="control buttons">
+    <button id="export" type="button">Export progress</button>
+    <button id="import-btn" type="button">Import progress</button>
+    <input id="import" type="file" accept="application/json" hidden>
+    <button id="reset" type="button">Reset</button>
+  </span>
+</section>
+
+<section class="detail" id="detail" hidden>
+  <div class="detail-head">
+    <h2 id="detail-name"></h2>
+    <span class="grade-chip" id="detail-grade"></span>
+    <button id="detail-close" type="button" aria-label="Close guide">&times;</button>
+  </div>
+  <p class="detail-desc" id="detail-desc"></p>
+  <p class="detail-meta" id="detail-meta"></p>
+  <ol class="detail-steps" id="detail-steps"></ol>
+  <p class="detail-sources" id="detail-sources"></p>
+  <label class="detail-note">My note
+    <textarea id="detail-note" rows="2" placeholder="Where I am with this one&hellip;"></textarea>
+  </label>
 </section>
 
 <main id="view"></main>
 
-<aside id="detail" class="detail" hidden aria-label="Trophy detail"></aside>
-
-<section class="tools" aria-label="Progress tools">
-  <button id="exportBtn" type="button">Export progress (JSON)</button>
-  <label class="importBtn">Import progress <input id="importFile" type="file" accept="application/json"></label>
-  <button id="resetBtn" type="button">Reset progress</button>
-  <span id="toolMsg" class="muted" role="status"></span>
-</section>
-
-<footer>
-  <p>Leonida Ledger — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Rockstar Games; this guide is not affiliated with or endorsed by Rockstar. Trophy names and descriptions are quoted as PlayStation publishes them; every guide is written in this entry's own words. No network requests are made: the app only reads its own <code>data/trophies.json</code>.</p>
+<footer class="colophon">
+  <p>Trophy names, descriptions and grades are the official list for Grand Theft Auto VI on PlayStation 5 (2026-11-18). Guide notes are written from those descriptions plus clearly labelled own advice; the game is unreleased, so nothing here is checked in the game yet. Progress is stored in this browser only.</p>
 </footer>
 
 <script type="module" src="app.js"></script>
